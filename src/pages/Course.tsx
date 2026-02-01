@@ -8,6 +8,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Icon from "@/components/ui/icon";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Sidebar from "@/components/Sidebar";
+import MobileNav from "@/components/MobileNav";
 
 const Course = () => {
   const [activeTab, setActiveTab] = useState("materials");
@@ -171,7 +173,9 @@ const Course = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+    <div className="flex min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+      <Sidebar />
+      <div className="flex-1 flex flex-col">
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 md:px-6 py-4">
           <div className="flex items-center gap-3 mb-4">
@@ -581,6 +585,8 @@ const Course = () => {
           </TabsContent>
         </Tabs>
       </div>
+      <MobileNav />
+    </div>
     </div>
   );
 };
