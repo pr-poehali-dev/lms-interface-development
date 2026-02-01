@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -6,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [selectedGroup, setSelectedGroup] = useState("10-А");
 
   const announcements = [
@@ -323,6 +325,7 @@ const Index = () => {
                 <div 
                   key={student.id} 
                   className="p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all cursor-pointer"
+                  onClick={() => navigate('/course/1')}
                 >
                   <div className="flex items-center gap-3">
                     <Avatar className="h-12 w-12">
